@@ -11,6 +11,9 @@ from pidev.kivy.PauseScreen import PauseScreen
 from pidev.kivy import DPEAButton
 from pidev.kivy import ImageButton
 
+from ex5 import *
+
+
 MIXPANEL_TOKEN = "x"
 MIXPANEL = MixPanel("Project Name", MIXPANEL_TOKEN)
 
@@ -55,6 +58,9 @@ class MainScreen(Screen):
         """
         SCREEN_MANAGER.current = 'passCode'
 
+
+class SecondScreen(Screen):
+    pass
 
 class AdminScreen(Screen):
     """
@@ -103,6 +109,7 @@ Widget additions
 
 Builder.load_file('main.kv')
 SCREEN_MANAGER.add_widget(MainScreen(name=MAIN_SCREEN_NAME))
+SCREEN_MANAGER.add_widget(SecondScreen(name="two"))
 SCREEN_MANAGER.add_widget(PassCodeScreen(name='passCode'))
 SCREEN_MANAGER.add_widget(PauseScreen(name='pauseScene'))
 SCREEN_MANAGER.add_widget(AdminScreen(name=ADMIN_SCREEN_NAME))
@@ -128,3 +135,4 @@ if __name__ == "__main__":
     # send_event("Project Initialized")
     # Window.fullscreen = 'auto'
     ProjectNameGUI().run()
+
